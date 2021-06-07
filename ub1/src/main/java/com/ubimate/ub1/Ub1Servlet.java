@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,8 @@ import ub1.core.Page;
  *
  * @author fabrizio
  */
+// https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples
+@WebServlet("/ub1-servlet")
 public class Ub1Servlet extends HttpServlet {
 
 	public static final String ROOTPATH = "/ub1-servlet";
