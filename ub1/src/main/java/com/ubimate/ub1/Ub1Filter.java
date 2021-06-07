@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author fabrizio
  */
-// https://www.codejava.net/java-ee/servlet/webfilter-annotation-examples
 @WebFilter("/*")
 public class Ub1Filter implements Filter {
 	private FilterConfig filterConfig = null;

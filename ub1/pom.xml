@@ -36,6 +36,12 @@
       <scope>test</scope>
     </dependency>
 
+	<!-- https://www.baeldung.com/maven-project-multiple-src-directories -->
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>3.0.0</version>
+    </dependency>
 	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -50,12 +56,6 @@
 		<version>2.0</version>
 		<!-- <scope>provided</scope> -->
 	</dependency>
-	<!-- https://www.baeldung.com/maven-project-multiple-src-directories -->
-    <dependency>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>build-helper-maven-plugin</artifactId>
-      <version>3.0.0</version>
-    </dependency>
 
   </dependencies>
   <build>

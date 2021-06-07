@@ -27,6 +27,14 @@
       <scope>test</scope>
     </dependency>
 
+	<!-- https://stackoverflow.com/a/11719764/12573599 -->
+	<dependency>
+		<groupId>com.ubimate</groupId>
+		<artifactId>ub1</artifactId>
+		<version>0.2-SNAPSHOT</version>
+		<systemPath>${pom.basedir}/../ub1/target/ub1-0.2-SNAPSHOT.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
 	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -40,14 +48,6 @@
 		<artifactId>jsp-api</artifactId>
 		<version>2.0</version>
 		<scope>provided</scope>
-	</dependency>
-	<!-- https://stackoverflow.com/a/11719764/12573599 -->
-	<dependency>
-		<groupId>com.ubimate</groupId>
-		<artifactId>ub1</artifactId>
-		<version>0.2-SNAPSHOT</version>
-		<systemPath>${pom.basedir}/../ub1/target/ub1-0.2-SNAPSHOT.jar</systemPath>
-		<scope>system</scope>
 	</dependency>
 
   </dependencies>
@@ -76,6 +76,16 @@
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
+		  	<!-- https://stackoverflow.com/a/48762841/12573599 -->
+		  	<configuration>
+				<failOnMissingWebXml>true</failOnMissingWebXml>
+				<webResources>
+					<resource>
+					<directory>${pom.basedir}/../ub1/target</directory>
+					<targetPath>WEB-INF/lib</targetPath>
+					</resource>
+				</webResources>
+			</configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

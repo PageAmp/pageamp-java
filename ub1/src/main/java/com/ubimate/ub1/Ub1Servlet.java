@@ -15,7 +15,6 @@ import ub1.core.Page;
  *
  * @author fabrizio
  */
-// https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples
 @WebServlet("/ub1-servlet")
 public class Ub1Servlet extends HttpServlet {
 
