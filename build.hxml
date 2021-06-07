@@ -1,0 +1,32 @@
+# generates client-side javascript in ub1/client/ub1.js
+# requires sister project ../ub1-core
+# requires project ../feffects for animations
+--js ub1/client/ub1.js
+--class-path src
+--class-path ../ub1-core/src
+--main ub1.JavaClient
+--define client
+--define HTML_EXTENSIONS
+--library hscript
+--define hscriptPos
+--macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
+--debug
+--dce std
+# if uncommented, enable animations
+--class-path ../feffects
+--define feffects
+
+--next
+
+# generates java source files in ub1/src/main/haxe/src
+# requires sister project ../ub1-core
+--java ub1/src/main/haxe
+--class-path ../ub1-core/src
+--main ub1.Ub1Server
+--debug
+--library utest
+--define HTML_EXTENSIONS
+--library hscript
+--define hscriptPos
+--macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
+-D no-compilation
