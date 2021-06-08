@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -13,6 +14,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import ub1.Ub1Server;
 
 /**
  *
@@ -38,16 +41,23 @@ public class Ub1Filter implements Filter {
 			String ext = (i1 > 0 && i2 < i1 ? path.substring(i1 + 1) : "");
 			
 			if (ext.length() == 0 || "html".equalsIgnoreCase(ext)) {
+				// requests of files with either .html or no suffix are
+				// considered page requests (this includes directories, whose
+				// index.html will be served)
 				String domain = req.getServerName();
 				domain = "127.0.0.1".equals(domain) ? "localhost" : domain;
 				req.setAttribute("domain", domain);
 				req.setAttribute("path", path);
 				req.setAttribute("ext", ext);
 				req.getRequestDispatcher(Ub1Servlet.ROOTPATH).forward(req, res);
-			} else if (!path.endsWith(".htm")) {
-				chain.doFilter(req, res);
-			} else {
+			} else if (Ub1Server.CLIENT_JS_PATHNAME.equals(path)) {
+				req.getRequestDispatcher(Ub1Client.ROOTPATH).forward(req, res);
+			} else if (path.endsWith(".htm")) {
+				// *.htm are considered page fragments meant for inclusion
+				// and are not directly served
 				((HttpServletResponse) res).setStatus(404);
+			} else {
+				chain.doFilter(req, res);
 			}
 		} catch (Throwable problem) {
 			if (problem instanceof ServletException) {
@@ -58,14 +68,6 @@ public class Ub1Filter implements Filter {
 			}
 			sendProcessingError(problem, res);
 		}
-	}
-
-	public FilterConfig getFilterConfig() {
-		return (this.filterConfig);
-	}
-
-	public void setFilterConfig(FilterConfig filterConfig) {
-		this.filterConfig = filterConfig;
 	}
 
 	@Override

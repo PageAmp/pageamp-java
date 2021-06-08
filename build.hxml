@@ -10,7 +10,6 @@
 --library hscript
 --define hscriptPos
 --macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
---debug
 --dce std
 # if uncommented, enable animations
 --class-path ../feffects
