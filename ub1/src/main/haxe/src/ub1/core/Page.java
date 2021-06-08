@@ -95,14 +95,14 @@ public class Page extends ub1.core.Element
 						//line 40 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 						if (( (  ! (((java.lang.String) (((java.lang.Object) (k1) )) ).startsWith(haxe.lang.Runtime.toString("-")))  &&  ! (haxe.root.Std.isOfType(v, ub1.reactivity.ReConst.class))  ) &&  ! (v.isFunction)  )) 
 						{
-							//line 43 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+							//line 44 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 							if (( haxe.lang.Runtime.getField(p, "_v", true) == null )) 
 							{
-								//line 43 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+								//line 44 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 								haxe.lang.Runtime.setField(p, "_v", new haxe.lang.DynamicObject(new java.lang.String[]{}, new java.lang.Object[]{}, new java.lang.String[]{}, new double[]{}));
 							}
 							
-							//line 44 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+							//line 45 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 							ub1.lib.PropertyTools.set2(haxe.lang.Runtime.getField(p, "_v", true), k1, v.v);
 						}
 						
@@ -110,45 +110,45 @@ public class Page extends ub1.core.Element
 					
 				}
 				
-				//line 47 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-				ub1.lib.PropertyTools.set(p, "id", null);
 				//line 48 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+				ub1.lib.PropertyTools.set(p, "id", null);
+				//line 49 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 				ub1.lib.PropertyTools.set(p, "_e", null);
 			}
 			
 		}
 		
-		//line 50 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+		//line 51 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 		return this.propsRegistry;
 	}
 	
 	
 	public ub1.core.Element load(ub1.core.Element parent, ub1.server.dom.HtmlElement dom, java.lang.Object cloneIndex)
 	{
-		//line 53 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		ub1.core.Page _gthis = this;
 		//line 54 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		java.lang.Object id = haxe.root.Std.parseInt(ub1.lib.DomTools.domGet(dom, "data-id"));
+		ub1.core.Page _gthis = this;
 		//line 55 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		java.lang.Object props = this.propsRegistry.__get(((int) (haxe.lang.Runtime.toInt(id)) ));
+		java.lang.Object id = haxe.root.Std.parseInt(ub1.lib.DomTools.domGet(dom, "data-id"));
 		//line 56 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		ub1.server.dom.HtmlElement __temp_expr1 = ((ub1.server.dom.HtmlElement) (haxe.lang.Runtime.setField(props, "dom", dom)) );
+		java.lang.Object props = this.propsRegistry.__get(((int) (haxe.lang.Runtime.toInt(id)) ));
 		//line 57 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+		ub1.server.dom.HtmlElement __temp_expr1 = ((ub1.server.dom.HtmlElement) (haxe.lang.Runtime.setField(props, "dom", dom)) );
+		//line 58 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 		if (( ! (haxe.lang.Runtime.eq(cloneIndex, null)) )) 
 		{
-			//line 57 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+			//line 58 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 			haxe.lang.Runtime.setField(props, "clone", new haxe.lang.DynamicObject(new java.lang.String[]{"index", "source"}, new java.lang.Object[]{cloneIndex, id}, new java.lang.String[]{}, new double[]{}));
 		}
 		
-		//line 58 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		ub1.core.Element ret = new ub1.core.Element(parent, props);
 		//line 59 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		haxe.lang.Function f = null;
+		ub1.core.Element ret = new ub1.core.Element(parent, props);
 		//line 60 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		f = new ub1.core.Page_load_60__Fun(ret, _gthis);
-		//line 69 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
-		f.__hx_invoke1_o(0.0, dom);
+		haxe.lang.Function f = null;
+		//line 61 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+		f = new ub1.core.Page_load_61__Fun(ret, _gthis);
 		//line 70 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
+		f.__hx_invoke1_o(0.0, dom);
+		//line 71 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Page.hx"
 		return ret;
 	}
 	

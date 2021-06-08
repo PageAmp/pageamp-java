@@ -6824,9 +6824,11 @@ ub1_Ub1Client.load = function(doc,pageProps) {
 	return ret;
 };
 ub1_Ub1Client.loadChildren = function(pageProps,p,dom) {
+	var s;
+	var clones = null;
 	var child = dom.firstElementChild;
 	while(child != null) {
-		var s = child.getAttribute("data-id");
+		s = child.getAttribute("data-id");
 		if(s != null) {
 			var id = Std.parseInt(s);
 			var props = pageProps[id];
@@ -6844,6 +6846,16 @@ ub1_Ub1Client.loadChildren = function(pageProps,p,dom) {
 				e = new ub1_core_Element(p,props);
 			}
 			ub1_Ub1Client.loadChildren(pageProps,e,child);
+			s = child.getAttribute("data-clone");
+			if(s != null) {
+				if(clones == null) {
+					clones = [];
+				}
+				clones.push(e);
+			} else if(clones != null) {
+				e.clones = clones;
+				clones = null;
+			}
 		} else {
 			ub1_Ub1Client.loadChildren(pageProps,p,child);
 		}
@@ -7507,6 +7519,9 @@ ub1_core_Element.prototype = $extend(ub1_reactivity_ReScope.prototype,{
 			this.dom.style.removeProperty(styleName);
 		}
 		return v;
+	}
+	,setClones: function(clones) {
+		this.clones = clones;
 	}
 	,initData: function() {
 		if(Object.prototype.hasOwnProperty.call(this.values.h,"data")) {

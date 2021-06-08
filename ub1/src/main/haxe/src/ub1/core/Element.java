@@ -491,12 +491,19 @@ public class Element extends ub1.reactivity.ReScope
 	
 	public haxe.root.Array<ub1.core.Element> clones;
 	
-	public final void initData()
+	public final void setClones(haxe.root.Array<ub1.core.Element> clones)
 	{
 		//line 233 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		this.clones = clones;
+	}
+	
+	
+	public final void initData()
+	{
+		//line 237 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 		if (((haxe.ds.StringMap<ub1.reactivity.ReValue>) (((haxe.IMap<java.lang.String, ub1.reactivity.ReValue>) (this.values) )) ).exists("data")) 
 		{
-			//line 234 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+			//line 238 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 			((ub1.reactivity.ReValue) (((haxe.ds.StringMap<ub1.reactivity.ReValue>) (((haxe.IMap<java.lang.String, ub1.reactivity.ReValue>) (this.values) )) ).get("data")) ).callback = ((haxe.lang.Function) (new haxe.lang.Closure(this, "dataCallback")) );
 		}
 		
@@ -505,84 +512,84 @@ public class Element extends ub1.reactivity.ReScope
 	
 	public java.lang.Object dataCallback(java.lang.Object v, java.lang.String k, java.lang.Object userData)
 	{
-		//line 240 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		//line 244 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 		java.lang.Object offset = this.getLocal("dataOffset", null);
-		//line 241 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		//line 245 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 		java.lang.Object length = this.getLocal("dataLength", null);
-		//line 243 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		//line 247 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 		if (haxe.root.Std.isOfType(v, ((java.lang.Object) (haxe.root.Array.class) ))) 
 		{
-			//line 244 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+			//line 248 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 			haxe.root.Array a = ((haxe.root.Array) (v) );
-			//line 246 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+			//line 250 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 			if (( ( ! (haxe.lang.Runtime.eq(offset, null)) ) || ( ! (haxe.lang.Runtime.eq(length, null)) ) )) 
 			{
-				//line 247 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 251 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				if (haxe.lang.Runtime.eq(offset, null)) 
 				{
-					//line 247 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 251 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					offset = 0;
 				}
 				
-				//line 248 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 252 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				if (haxe.lang.Runtime.eq(length, null)) 
 				{
-					//line 248 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 252 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					length = ((java.lang.Object) (java.lang.Math.max(((double) (0) ), ((double) (( ((int) (a.length) ) - ((int) (haxe.lang.Runtime.toInt(offset)) ) )) ))) );
 				}
 				
-				//line 249 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 253 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				a = a.slice(((int) (haxe.lang.Runtime.toInt(offset)) ), ( ((int) (haxe.lang.Runtime.toInt(offset)) ) + ((int) (haxe.lang.Runtime.toInt(length)) ) ));
 			}
 			
-			//line 252 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+			//line 256 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 			if (( ! (( this.clone == null )) )) 
 			{
-				//line 254 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 258 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				int i = ((int) (haxe.lang.Runtime.getField_f(this.clone, "index", true)) );
-				//line 255 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 259 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				if (( ( i >= 0 ) && ( i < a.length ) )) 
 				{
-					//line 255 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 259 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					return a.__get(i);
 				}
 				else
 				{
-					//line 255 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 259 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					return null;
 				}
 				
 			}
 			else
 			{
-				//line 257 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 261 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				int count = ((int) (java.lang.Math.max(((double) (( a.length - 1 )) ), ((double) (0) ))) );
-				//line 258 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 262 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				if (( this.clones == null )) 
 				{
-					//line 258 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 262 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					this.clones = new haxe.root.Array<ub1.core.Element>(new ub1.core.Element[]{});
 				}
 				
-				//line 260 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				{
-					//line 260 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					int _g = 0;
-					//line 260 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					int _g1 = count;
-					//line 260 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					while (( _g < _g1 ))
 					{
-						//line 260 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 						int i1 = _g++;
-						//line 261 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						//line 265 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 						if (( i1 >= this.clones.length )) 
 						{
-							//line 262 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							//line 266 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							ub1.core.Element c = this.cloneSelf(i1);
-							//line 263 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							//line 267 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							this.clones.push(c);
-							//line 264 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							//line 268 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							c.context.refresh(c, null);
 						}
 						
@@ -590,32 +597,32 @@ public class Element extends ub1.reactivity.ReScope
 					
 				}
 				
-				//line 268 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 272 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				while (( this.clones.length > count ))
 				{
-					//line 269 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 273 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					ub1.core.Element c1 = ((ub1.core.Element) (this.clones.pop()) );
-					//line 270 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 274 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					ub1.lib.DomTools.domRemove(c1.dom);
-					//line 271 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+					//line 275 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 					if (( c1.baseParent != null )) 
 					{
-						//line 271 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						//line 275 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 						c1.baseParent.removeChild(c1);
 					}
 					
 				}
 				
-				//line 273 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 277 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				java.lang.Object ret = ( (( a.length > 0 )) ? (a.__get(( a.length - 1 ))) : (null) );
-				//line 274 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+				//line 278 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 				return ret;
 			}
 			
 		}
 		else
 		{
-			//line 277 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+			//line 281 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 			return v;
 		}
 		
@@ -624,21 +631,21 @@ public class Element extends ub1.reactivity.ReScope
 	
 	public ub1.core.Element cloneSelf(int cloneIndex)
 	{
-		//line 282 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		java.lang.String html = ub1.lib.DomTools.domOuterHTML(this.dom);
-		//line 283 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.server.dom.HtmlElement wrapper = ub1.lib.DomTools.domCreateElement(((ub1.core.Page) (this.baseRoot) ).doc, "div");
-		//line 284 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.lib.DomTools.domSetHtml(wrapper, html);
-		//line 285 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.server.dom.HtmlElement e = ub1.lib.DomTools.domFirstElementChild(wrapper);
 		//line 286 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.lib.DomTools.domSet(e, "data-clone", ( "" + cloneIndex ));
+		java.lang.String html = ub1.lib.DomTools.domOuterHTML(this.dom);
 		//line 287 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.lib.DomTools.domAddChild(ub1.lib.DomTools.domParent(this.dom), e, this.dom);
+		ub1.server.dom.HtmlElement wrapper = ub1.lib.DomTools.domCreateElement(((ub1.core.Page) (this.baseRoot) ).doc, "div");
 		//line 288 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-		ub1.core.Element ret = ((ub1.core.Page) (this.baseRoot) ).load(((ub1.core.Element) (this.baseParent) ), e, cloneIndex);
+		ub1.lib.DomTools.domSetHtml(wrapper, html);
 		//line 289 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		ub1.server.dom.HtmlElement e = ub1.lib.DomTools.domFirstElementChild(wrapper);
+		//line 290 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		ub1.lib.DomTools.domSet(e, "data-clone", ( "" + cloneIndex ));
+		//line 291 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		ub1.lib.DomTools.domAddChild(ub1.lib.DomTools.domParent(this.dom), e, this.dom);
+		//line 292 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+		ub1.core.Element ret = ((ub1.core.Page) (this.baseRoot) ).load(((ub1.core.Element) (this.baseParent) ), e, cloneIndex);
+		//line 293 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 		return ret;
 	}
 	
@@ -961,15 +968,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case -1357525322:
+					case 123872696:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("clones")) 
+						if (field.equals("setClones")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return this.clones;
+							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setClones")) );
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -993,15 +1000,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case -1996136170:
+					case -1357525322:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("styleCallback")) 
+						if (field.equals("clones")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "styleCallback")) );
+							return this.clones;
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1025,15 +1032,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case 932656605:
+					case -1996136170:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("classCallback")) 
+						if (field.equals("styleCallback")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "classCallback")) );
+							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "styleCallback")) );
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1057,15 +1064,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case -440447854:
+					case 932656605:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("textCallback")) 
+						if (field.equals("classCallback")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "textCallback")) );
+							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "classCallback")) );
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1089,15 +1096,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case 323476822:
+					case -440447854:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("attrCallback")) 
+						if (field.equals("textCallback")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "attrCallback")) );
+							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "textCallback")) );
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1114,6 +1121,22 @@ public class Element extends ub1.reactivity.ReScope
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "addEventHandler")) );
+						}
+						
+						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						break;
+					}
+					
+					
+					case 323476822:
+					{
+						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						if (field.equals("attrCallback")) 
+						{
+							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							__temp_executeDef1 = false;
+							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							return ((haxe.lang.Function) (new haxe.lang.Closure(this, "attrCallback")) );
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1331,15 +1354,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case -1996136170:
+					case 123872696:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("styleCallback")) 
+						if (field.equals("setClones")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return this.styleCallback(dynargs[0], haxe.lang.Runtime.toString(dynargs[1]), haxe.lang.Runtime.toString(dynargs[2]));
+							this.setClones(((haxe.root.Array<ub1.core.Element>) (dynargs[0]) ));
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1363,15 +1386,15 @@ public class Element extends ub1.reactivity.ReScope
 					}
 					
 					
-					case 932656605:
+					case -1996136170:
 					{
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-						if (field.equals("classCallback")) 
+						if (field.equals("styleCallback")) 
 						{
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
-							return this.classCallback(dynargs[0], haxe.lang.Runtime.toString(dynargs[1]), haxe.lang.Runtime.toString(dynargs[2]));
+							return this.styleCallback(dynargs[0], haxe.lang.Runtime.toString(dynargs[1]), haxe.lang.Runtime.toString(dynargs[2]));
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
@@ -1388,6 +1411,22 @@ public class Element extends ub1.reactivity.ReScope
 							__temp_executeDef1 = false;
 							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
 							return this.attrCallback(dynargs[0], haxe.lang.Runtime.toString(dynargs[1]), haxe.lang.Runtime.toString(dynargs[2]));
+						}
+						
+						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						break;
+					}
+					
+					
+					case 932656605:
+					{
+						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+						if (field.equals("classCallback")) 
+						{
+							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							__temp_executeDef1 = false;
+							//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"
+							return this.classCallback(dynargs[0], haxe.lang.Runtime.toString(dynargs[1]), haxe.lang.Runtime.toString(dynargs[2]));
 						}
 						
 						//line 37 "/Users/fabrizio/ubimate/oss/ub1/ub1-core/src/ub1/core/Element.hx"

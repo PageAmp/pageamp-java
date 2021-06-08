@@ -1,7 +1,7 @@
-# generates client-side javascript in ub1/client/ub1.js
+# generates client-side javascript in ub1/src/main/java/com/ubimate/ub1/ub1.js
 # requires sister project ../ub1-core
 # requires project ../feffects for animations
---js ub1/client/ub1.js
+--js ub1/src/main/java/com/ubimate/ub1/ub1.js
 --class-path src
 --class-path ../ub1-core/src
 --main ub1.JavaClient
