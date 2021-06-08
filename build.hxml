@@ -29,3 +29,8 @@
 --define hscriptPos
 --macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
 -D no-compilation
+
+--cmd "mvn -f ub1 compiler:compile"
+--cmd "mvn -f ub1 jar:jar"
+--cmd "mvn -f ub1-demo compiler:compile"
+--cmd "mvn -f ub1-demo war:war"
