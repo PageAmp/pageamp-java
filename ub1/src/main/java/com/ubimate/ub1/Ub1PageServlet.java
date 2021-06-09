@@ -17,9 +17,9 @@ import ub1.core.Page;
  *
  * @author fabrizio
  */
-@WebServlet("/.ub1-servlet")
-public class Ub1Servlet extends HttpServlet {
-	public static final String ROOTPATH = "/.ub1-servlet";
+@WebServlet("/.ub1-page")
+public class Ub1PageServlet extends HttpServlet {
+	public static final String ROOTPATH = "/.ub1-page";
 	protected String docroot;
 
 	@Override

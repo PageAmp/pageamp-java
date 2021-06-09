@@ -49,9 +49,9 @@ public class Ub1Filter implements Filter {
 				req.setAttribute("domain", domain);
 				req.setAttribute("path", path);
 				req.setAttribute("ext", ext);
-				req.getRequestDispatcher(Ub1Servlet.ROOTPATH).forward(req, res);
+				req.getRequestDispatcher(Ub1PageServlet.ROOTPATH).forward(req, res);
 			} else if (Ub1Server.CLIENT_JS_PATHNAME.equals(path)) {
-				req.getRequestDispatcher(Ub1Client.ROOTPATH).forward(req, res);
+				req.getRequestDispatcher(Ub1ClientServlet.ROOTPATH).forward(req, res);
 			} else if (path.endsWith(".htm")) {
 				// *.htm are considered page fragments meant for inclusion
 				// and are not directly served

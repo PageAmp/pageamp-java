@@ -1,0 +1,2 @@
+--cmd "mvn -f ub1 clean:clean"
+--cmd "mvn -f ub1-demo clean:clean"

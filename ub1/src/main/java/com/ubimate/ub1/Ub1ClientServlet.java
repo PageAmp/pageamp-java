@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/.ub1-client")
-public class Ub1Client extends HttpServlet {
+public class Ub1ClientServlet extends HttpServlet {
 	public static final String ROOTPATH = "/.ub1-client";
 	protected static final String CLIENT_JS_PATH = "ub1.js";
 	protected static final int BUFFER_SIZE = 4 * 1024;
