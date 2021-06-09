@@ -1,5 +1,5 @@
-client/*
-src/main/haxe/hxjava_build.txt
+src/main/haxe
+src/main/java/com/ubimate/ub1/ub1.js
 
 #
 # Standard Maven .gitignore
