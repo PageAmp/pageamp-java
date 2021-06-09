@@ -23,7 +23,7 @@
 --class-path src
 --class-path ../ub1-core/src
 --class-path ../ub1-core/test
---main ub1.JavaServer
+--main ub1.Ub1Server
 --debug
 --library utest
 --define HTML_EXTENSIONS
