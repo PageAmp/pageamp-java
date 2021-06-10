@@ -70,7 +70,7 @@ public class PAPageServlet extends HttpServlet {
 
 	@Override
 	public String getServletInfo() {
-		return "Ub1 Servlet";
+		return "PAPageServlet";
 	}
 
 }

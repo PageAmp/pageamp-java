@@ -82,9 +82,9 @@ public class PAFilter implements Filter {
 	@Override
 	public String toString() {
 		if (filterConfig == null) {
-			return ("Ub1Filter()");
+			return ("PAFilter()");
 		}
-		StringBuilder sb = new StringBuilder("Ub1Filter(");
+		StringBuilder sb = new StringBuilder("PAFilter(");
 		sb.append(filterConfig);
 		sb.append(")");
 		return (sb.toString());
