@@ -1,4 +1,4 @@
-package com.ubimate.ub1;
+package com.ubimate.pageamp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/.ub1-client")
-public class Ub1ClientServlet extends HttpServlet {
-	public static final String ROOTPATH = "/.ub1-client";
-	protected static final String CLIENT_JS_PATH = "ub1.js";
+@WebServlet("/.pageamp-client")
+public class PAClientServlet extends HttpServlet {
+	public static final String ROOTPATH = "/.pageamp-client";
+	protected static final String CLIENT_JS_PATH = "pageamp.js";
 	protected static final int BUFFER_SIZE = 4 * 1024;
 	
 	@Override

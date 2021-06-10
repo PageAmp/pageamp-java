@@ -1,2 +1,2 @@
---cmd "mvn -f ub1 clean:clean"
---cmd "mvn -f ub1-demo clean:clean"
+--cmd "mvn -f pageamp clean:clean"
+--cmd "mvn -f pageamp-sample clean:clean"

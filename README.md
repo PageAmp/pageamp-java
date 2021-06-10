@@ -1,2 +1,2 @@
-# ub1-java
-Isomorphic Reactive Web Framework for NodeJS, Java and PHP.
+# pageamp-java
+Isomorphic Reactive Web Framework for Node.js, Java and PHP.

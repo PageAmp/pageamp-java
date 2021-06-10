@@ -1,4 +1,4 @@
-package com.ubimate.ub1;
+package com.ubimate.pageamp;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -15,17 +15,17 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ub1.Ub1Server;
+import pageamp.Server;
 
 /**
  *
  * @author fabrizio
  */
 @WebFilter("/*")
-public class Ub1Filter implements Filter {
+public class PAFilter implements Filter {
 	private FilterConfig filterConfig = null;
 
-	public Ub1Filter() {
+	public PAFilter() {
 	}
 
 	@Override
@@ -49,9 +49,9 @@ public class Ub1Filter implements Filter {
 				req.setAttribute("domain", domain);
 				req.setAttribute("path", path);
 				req.setAttribute("ext", ext);
-				req.getRequestDispatcher(Ub1PageServlet.ROOTPATH).forward(req, res);
-			} else if (Ub1Server.CLIENT_JS_PATHNAME.equals(path)) {
-				req.getRequestDispatcher(Ub1ClientServlet.ROOTPATH).forward(req, res);
+				req.getRequestDispatcher(PAPageServlet.ROOTPATH).forward(req, res);
+			} else if (Server.CLIENT_JS_PATHNAME.equals(path)) {
+				req.getRequestDispatcher(PAClientServlet.ROOTPATH).forward(req, res);
 			} else if (path.endsWith(".htm")) {
 				// *.htm are considered page fragments meant for inclusion
 				// and are not directly served

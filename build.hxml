@@ -1,15 +1,15 @@
-# generates client-side javascript in ub1/src/main/java/com/ubimate/ub1/ub1.js
-# requires sister project ../ub1-core
+# generates client-side javascript in pageamp/src/main/java/com/ubimate/pageamp/pageamp.js
+# requires sister project ../pageamp
 # requires project ../feffects for animations
---js ub1/src/main/java/com/ubimate/ub1/ub1.js
+--js pageamp/src/main/java/com/ubimate/pageamp/pageamp.js
 --class-path src
---class-path ../ub1-core/src
---main ub1.JavaClient
+--class-path ../pageamp/src
+--main pageamp.JavaClient
 --define client
 --define HTML_EXTENSIONS
 --library hscript
 --define hscriptPos
---macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
+--macro patchTypes('../pageamp/src/pageamp/hscript/interpTypePatch')
 --dce std
 # if uncommented, enable animations
 --class-path ../feffects
@@ -17,22 +17,22 @@
 
 --next
 
-# generates java source files in ub1/src/main/haxe/src
-# requires sister project ../ub1-core
---java ub1/src/main/haxe
+# generates java source files in pageamp/src/main/haxe/src
+# requires sister project ../pageamp
+--java pageamp/src/main/haxe
 --class-path src
---class-path ../ub1-core/src
---class-path ../ub1-core/test
---main ub1.Ub1Server
+--class-path ../pageamp/src
+--class-path ../pageamp/test
+--main pageamp.Server
 --debug
 --library utest
 --define HTML_EXTENSIONS
 --library hscript
 --define hscriptPos
---macro patchTypes('../ub1-core/src/ub1/hscript/interpTypePatch')
+--macro patchTypes('../pageamp/src/pageamp/hscript/interpTypePatch')
 -D no-compilation
 
---cmd "mvn -f ub1 compiler:compile"
---cmd "mvn -f ub1 jar:jar"
---cmd "mvn -f ub1-demo compiler:compile"
---cmd "mvn -f ub1-demo war:war"
+--cmd "mvn -f pageamp compiler:compile"
+--cmd "mvn -f pageamp jar:jar"
+--cmd "mvn -f pageamp-sample compiler:compile"
+--cmd "mvn -f pageamp-sample war:war"

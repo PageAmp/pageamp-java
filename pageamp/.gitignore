@@ -1,5 +1,5 @@
 src/main/haxe/*
-src/main/java/com/ubimate/ub1/ub1.js
+src/main/java/com/ubimate/pageamp/pageamp.js
 
 #
 # Standard Maven .gitignore

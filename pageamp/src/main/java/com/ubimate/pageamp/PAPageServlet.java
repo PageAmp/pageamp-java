@@ -1,4 +1,4 @@
-package com.ubimate.ub1;
+package com.ubimate.pageamp;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ub1.Ub1Server;
-import ub1.core.Page;
+import pageamp.Server;
+import pageamp.core.Page;
 
 /**
  *
  * @author fabrizio
  */
-@WebServlet("/.ub1-page")
-public class Ub1PageServlet extends HttpServlet {
-	public static final String ROOTPATH = "/.ub1-page";
+@WebServlet("/.pageamp-page")
+public class PAPageServlet extends HttpServlet {
+	public static final String ROOTPATH = "/.pageamp-page";
 	protected String docroot;
 
 	@Override
@@ -43,7 +43,7 @@ public class Ub1PageServlet extends HttpServlet {
 				}
 			}
 			String contextPath = getServletContext().getContextPath();
-			Page page = Ub1Server.load(docroot, path, domain, true, contextPath);
+			Page page = Server.load(docroot, path, domain, true, contextPath);
 			res.setContentType("text/html;charset=UTF-8");
 			wr.print(page.doc.toString());
 		} catch (Exception ex) {

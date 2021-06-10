@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ubimate</groupId>
-  <artifactId>ub1-demo</artifactId>
+  <artifactId>pageamp-sample</artifactId>
   <version>0.2-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>ub1-demo Maven Webapp</name>
+  <name>pageamp-sample Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -30,9 +30,9 @@
 	<!-- https://stackoverflow.com/a/11719764/12573599 -->
 	<dependency>
 		<groupId>com.ubimate</groupId>
-		<artifactId>ub1</artifactId>
+		<artifactId>pageamp</artifactId>
 		<version>0.2-SNAPSHOT</version>
-		<systemPath>${pom.basedir}/../ub1/target/ub1-0.2-SNAPSHOT.jar</systemPath>
+		<systemPath>${pom.basedir}/../pageamp/target/pageamp-0.2-SNAPSHOT.jar</systemPath>
 		<scope>system</scope>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -53,7 +53,7 @@
   </dependencies>
 
   <build>
-    <finalName>ub1-demo</finalName>
+    <finalName>pageamp-sample</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -81,7 +81,7 @@
 				<failOnMissingWebXml>true</failOnMissingWebXml>
 				<webResources>
 					<resource>
-					<directory>${pom.basedir}/../ub1/target</directory>
+					<directory>${pom.basedir}/../pageamp/target</directory>
 					<targetPath>WEB-INF/lib</targetPath>
 					</resource>
 				</webResources>
