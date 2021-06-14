@@ -272,18 +272,18 @@
 	&lt;/:define>
 &lt;/head>
 &lt;body>
-	&lt;app-product :title="Thingy" :price="1€"/>
-	&lt;app-product :title="Widget" :price="2€"/>
-	&lt;app-product :title="Gadget" :price="3€"/>
+	&lt;app-product :title="Thingy" :price="1$"/>
+	&lt;app-product :title="Widget" :price="2$"/>
+	&lt;app-product :title="Gadget" :price="3$"/>
 &lt;/body>
 &lt;/html>
 ```'/>
 				</div>
 
 				<div class="pg-browser pk-column four">
-					<app-product :title="Thingy" :price="1€"/>
-					<app-product :title="Widget" :price="2€"/>
-					<app-product :title="Gadget" :price="3€"/>
+					<app-product :title="Thingy" :price="1$"/>
+					<app-product :title="Widget" :price="2$"/>
+					<app-product :title="Gadget" :price="3$"/>
 				</div>
 			</div>
 
@@ -374,10 +374,10 @@
 &lt;/head>
 &lt;body>
 	&lt;:datasource :name="products">[
-		{"title": "Thingy", "price": "1€"},
-		{"title": "Widget", "price": "2€"},
-		{"title": "Gadget", "price": "3€"}
-		{"title": "Gizmo", "price": "4€"}
+		{"title": "Thingy", "price": "1$"},
+		{"title": "Widget", "price": "2$"},
+		{"title": "Gadget", "price": "3$"}
+		{"title": "Gizmo", "price": "4$"}
 	]&lt;/:datasource>
 	&lt;div class="page-product" :data="&#91;[products.data]]">
 		&lt;div>Name: &#91;[data.title]]&lt;/div>
@@ -390,17 +390,17 @@
 
 				<!-- <div class="pg-browser pk-column four">
 					<app-product :data=[[ [
-						{"title": "Thingy", "price": "1€"},
-						{"title": "Widget", "price": "2€"},
-						{"title": "Gadget", "price": "3€"},
-						{"title": "Gizmo", "price": "4€"}
+						{"title": "Thingy", "price": "1$"},
+						{"title": "Widget", "price": "2$"},
+						{"title": "Gadget", "price": "3$"},
+						{"title": "Gizmo", "price": "4$"}
 					] ]] :title="[[data.title]]" :price="[[data.price]]"/>
 				</div> -->
 				<div class="pg-browser pk-column four">
-					<app-product :title="Thingy" :price="1€"/>
-					<app-product :title="Widget" :price="2€"/>
-					<app-product :title="Gadget" :price="3€"/>
-					<app-product :title="Gizmo" :price="4€"/>
+					<app-product :title="Thingy" :price="1$"/>
+					<app-product :title="Widget" :price="2$"/>
+					<app-product :title="Gadget" :price="3$"/>
+					<app-product :title="Gizmo" :price="4$"/>
 				</div>
 			</div>
 
