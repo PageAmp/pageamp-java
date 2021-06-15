@@ -1,0 +1,1 @@
+../../../../../../pageamp-client/dist/pageamp.js

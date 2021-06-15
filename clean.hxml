@@ -1,2 +1,3 @@
---cmd "mvn -f pageamp clean:clean"
---cmd "mvn -f pageamp-sample clean:clean"
+--cmd "rm -rf src/main/haxe/src/*"
+--cmd "rm -rf src/main/haxe/hxjava_build.txt"
+--cmd "mvn clean:clean"

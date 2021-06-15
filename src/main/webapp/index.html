@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--- TODO: favicon -->
+	<!--- https://www.google.com.mt/search?q=loadspeaker+grille+background&hl=en&tbm=isch&source=hp&biw=1324&bih=1379&ei=dufEYPLyM8TTgwfD9Y-QBA&oq=loadspeaker+grille+background&gs_lcp=CgNpbWcQAzoCCAA6BQgAELEDOgQIABADOggIABCxAxCDAToGCAAQChAYUJgIWJpiYPZmaABwAHgAgAGoAYgB8BqSAQQwLjI5mAEAoAEBqgELZ3dzLXdpei1pbWewAQA&sclient=img&ved=0ahUKEwjyhfWmyJLxAhXE6eAKHcP6A0IQ4dUDCBA&uact=5 -->
+	<head>
+		<meta charset="UTF-8">
+		<title>PageAmp - Reactive web framework</title>
+		<:include src="/.pagekit/base.htm"/>
+		<style>
+			/* .pk-banner-backdrop {
+				background-image: url(assets/background-tablet-wallpaper-metal-speaker-grill-texture-ipad-6-744450.jpg);
+				background-size: 500px;
+			}
+			.pk-banner-background {
+				opacity: .75;
+			} */
+			.pg-banner-brand {
+				width: 30%;
+				min-width: 70px;
+				max-width: 150px;
+				padding: 1em 0;
+				margin: 1em .5em;
+				background: rgba(255,255,255,.2);
+				border: 1px solid rgba(255,255,255,.2);
+				border-radius: 3px;
+				font-size: .8em;
+			}
+			.pg-banner-brand i {
+				font-size: 2em;
+				padding-bottom: .2em;
+			}
+			.pg-banner-brand span {
+				font-size: 70%;
+			}
+			.pk-ace-editor {
+				background: #1f3e5b;
+			}
+			.ace-monokai .ace_marker-layer .ace_selection {
+				background: #3f5e7b;
+			}
+			.pg-browser {
+				border: 1px solid rgba(0,0,0,.1);
+				padding: 1.2em;
+				margin-right: 1em;
+			}
+			@media (min-width: 480px) {
+				.pg-banner-brand {
+					margin: 1em 1em;
+				}
+				.pg-banner-brand i {
+					font-size: 2.5em;
+				}
+				.pg-banner-brand span {
+					font-size: 85%;
+				}
+			}
+			/* https://colorswall.com/palette/3223/ */
+			.pg-node-js i {color: #68a063;}
+			/* https://colorswall.com/palette/170/ */
+			.pg-java i {color: #5382a1;}
+			/* https://colorswall.com/palette/938/ */
+			.pg-php i {color: #8993be;}
+			ul {
+				opacity: .85;
+				padding-left: 1em;
+			}
+		</style>
+		<style>
+			.app-product {
+				padding: .5em;
+				border: 1px solid rgba(0,0,0,.1);
+				margin-bottom: .5em;
+			}
+		</style>
+		<:define tag="app-product" class="app-product">
+			<div>Name: [[title]]</div>
+			<div>Price: [[price]]</div>
+		</:define>
+	</head>
+	<body>
+		<pk-banner>
+			<h1>PageAmp</h1>
+			<p>
+				Reactive web framework for
+				<strong>Node.js</strong>,&nbsp;<strong>Java</strong>,&nbsp;<strong>PHP</strong>, and&nbsp;the&nbsp;browser
+			</p>
+			<div class="pk-container">
+				<div class="pg-banner-brand">
+					<i class="fab fa-node-js"></i><br/>
+					Node.js<br/><span>quick&nbsp;start</span>
+				</div>
+				<div class="pg-banner-brand">
+					<i class="fab fa-java"></i><br/>
+					Java<br/><span>quick&nbsp;start</span>
+				</div>
+				<div class="pg-banner-brand">
+					<i class="fab fa-php"></i><br/>
+					PHP<br/><span>quick&nbsp;start</span>
+				</div>
+			</div>
+		</pk-banner>
+
+		<div class="pk-corner-ribbon">
+			<div class="pk-corner-ribbon wrapper">
+				<div class="pk-corner-ribbon ribbon">
+					preview
+				</div>
+			</div>
+		</div>
+
+		<div class="pk-section pk-grid">
+			<div class="pk-row">
+				<div class="pk-column four">
+					<h2>Isomorphic Pages</h2>
+					<p>
+						PageAmp lets you add reactive logic directly to your HTML.
+						Execution starts in the server and continues in the browser.
+					</p>
+					<a href="#">learn more</a>
+				</div>
+
+				<div class="pk-column four">
+					<h2>Reusable HTML</h2>
+					<p>
+						PageAmp's preprocessor lets you split your HTML into modules,
+						define components, and create reusable libraries.
+					</p>
+					<a href="#">learn more</a>
+				</div>
+
+				<div class="pk-column four">
+					<h2>Cross Platform</h2>
+					<p>
+						In contrast to other isomorphic web solutions, PageAmp doesn't
+						limit your server-side options to Node.js.
+					</p>
+					<a href="#">learn more</a>
+				</div>
+			</div>
+			<br/>
+
+			<hr class="pk-row-split"/>
+
+			<!--- ==================================================================== -->
+			<!--- hello world -->
+			<!--- ==================================================================== -->
+
+			<div class="pk-row">
+				<div class="pk-column" style="padding-top:0;padding-bottom:.8em">
+					<h2 style="margin-top:0">Hello World</h2>
+				</div>
+			</div>
+			<div class="pk-row equalized" style="padding-top:0">
+				<div class="pk-column eight" style="padding-top:0;padding-right:0">
+<pk-markdown :text=
+'```
+<html :color="blue">
+<head>
+	<style>
+		body {
+			color: &#91;[color]];
+		}
+	</style>
+</head>
+<body :ev_click="&#91;[color = (color == &apos;red&apos; ? &apos;blue&apos; : &apos;red&apos;)]]">
+	Hello &#91;[color]] world! Click to change planet.
+</body>
+</html>
+```'/>
+				</div>
+
+				<div class="pg-browser pk-column four"
+					:color="blue"
+					:ev_click=[[color = (color == 'red' ? 'blue' : 'red')]]
+				>
+					<span :s_color="[[color]]">
+						Hello [[color]] world! Click to change planet.
+					</span>
+				</div>
+			</div>
+
+			<!--- <div class="pk-row">
+				<div class="pk-column">
+					PageAmp keeps your pages up to date in the simplest way possible
+				</div>
+			</div> -->
+
+			<div class="pk-row">
+				<div class="pk-column six">
+					<h3>Reactive Logic</h3>
+					<ul>
+						<li>
+							<p>
+								PageAmp lets you define <a href="#">logic attributes</a>,
+								which don't appear in generated pages,
+								by prefixing them with <code>:</code>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Logic attributes can be used in <a href="#">expressions</a>,
+								surrounded by <code>&#91;[</code> and <code>]]</code>,
+								anywhere in texts and attribute values.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								When the value of a logic attribute changes, all
+								dependent expressions are automatically updated.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="pk-column six">
+					<h3>Isomorphic Pages</h3>
+					<ul>
+						<li>
+							<p>
+								Expressions work the same in both the client and the
+								server.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The server generates pages that are ready for search
+								engine indexing and are quickly displayed to users while
+								the client runtime is loaded.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Modern browsers will seamlessly take over logic execution,
+								while all other clients will see an old style website.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<hr class="pk-row-split"/>
+
+			<!--- ==================================================================== -->
+			<!--- hello component -->
+			<!--- ==================================================================== -->
+
+			<div class="pk-row">
+				<div class="pk-column" style="padding-top:0;padding-bottom:.8em">
+					<h2 style="margin-top:0">Hello Component</h2>
+				</div>
+			</div>
+			<div class="pk-row equalized" style="padding-top:0">
+				<div class="pk-column eight" style="padding-top:0;padding-right:0">
+					<!--- TODO: https://ace.c9.io/#nav=higlighter&api=ace -->
+<pk-markdown :text=
+'```&lt;html>
+&lt;head>
+	&lt;style>
+		.app-product {
+			padding: .5em;
+			border: 1px solid rgba(0,0,0,.1);
+			margin-bottom: .5em;
+		}
+	&lt;/style>
+	&lt;:define tag="app-product" class="app-product">
+		&lt;div>Name: &#91;[title]]&lt;/div>
+		&lt;div>Price: &#91;[price]]&lt;/div>
+	&lt;/:define>
+&lt;/head>
+&lt;body>
+	&lt;app-product :title="Thingy" :price="1$"/>
+	&lt;app-product :title="Widget" :price="2$"/>
+	&lt;app-product :title="Gadget" :price="3$"/>
+&lt;/body>
+&lt;/html>
+```'/>
+				</div>
+
+				<div class="pg-browser pk-column four">
+					<app-product :title="Thingy" :price="1$"/>
+					<app-product :title="Widget" :price="2$"/>
+					<app-product :title="Gadget" :price="3$"/>
+				</div>
+			</div>
+
+			<div class="pk-row">
+				<div class="pk-column six">
+					<h3>Imports</h3>
+					<ul>
+						<li>
+							<p>
+								PageAmp preprocesses pages in the server. It considers
+								<code>*.htm</code> files as <a href="#">fragments</a>
+								to be included in your pages.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								The <code>&lt;:import></code> tag only includes a particular
+								fragment once, while the <code>&lt;:include></code> tag
+								is replaced by the fragment at each occurrence.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Imports are the basis for effective HTML modularization and
+								componentization in PageAmp.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="pk-column six">
+					<h3>Defines</h3>
+					<ul>
+						<li>
+							<p>
+								PageAmp's preprocessor lets you define your own
+								parametric <a href="#">custom tags</a>
+								with the <code>&lt;:define></code> tag.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								You can use custom tags to avoid repeated blocks of code.
+								Combined with imports, you can also
+								define reusable <a href="#">components</a>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Wrapping existing HTML frameworks
+								as PageAmp <a href="#">kits</a> is quick and convenient. Plus,
+								PageAmp provides its own <a href="#">pagekit</a>.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<hr class="pk-row-split"/>
+
+			<!--- ==================================================================== -->
+			<!--- hello data -->
+			<!--- ==================================================================== -->
+
+			<div class="pk-row">
+				<div class="pk-column" style="padding-top:0;padding-bottom:.8em">
+					<h2 style="margin-top:0">Hello Data</h2>
+				</div>
+			</div>
+			<div class="pk-row equalized" style="padding-top:0">
+				<div class="pk-column eight" style="padding-top:0;padding-right:0">
+					<!--- TODO: https://ace.c9.io/#nav=higlighter&api=ace -->
+<pk-markdown :text=
+'```
+&lt;html>
+&lt;head>
+	&lt;style>
+		.app-product {
+			padding: .5em;
+			border: 1px solid rgba(0,0,0,.1);
+			margin-bottom: .5em;
+		}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+	&lt;:datasource :name="products">[
+		{"title": "Thingy", "price": "1$"},
+		{"title": "Widget", "price": "2$"},
+		{"title": "Gadget", "price": "3$"}
+		{"title": "Gizmo", "price": "4$"}
+	]&lt;/:datasource>
+	&lt;div class="page-product" :data="&#91;[products.data]]">
+		&lt;div>Name: &#91;[data.title]]&lt;/div>
+		&lt;div>Price: &#91;[data.price]]&lt;/div>
+	&lt;/div>
+&lt;/body>
+&lt;/html>
+```'/>
+				</div>
+
+				<!-- <div class="pg-browser pk-column four">
+					<app-product :data=[[ [
+						{"title": "Thingy", "price": "1$"},
+						{"title": "Widget", "price": "2$"},
+						{"title": "Gadget", "price": "3$"},
+						{"title": "Gizmo", "price": "4$"}
+					] ]] :title="[[data.title]]" :price="[[data.price]]"/>
+				</div> -->
+				<div class="pg-browser pk-column four">
+					<app-product :title="Thingy" :price="1$"/>
+					<app-product :title="Widget" :price="2$"/>
+					<app-product :title="Gadget" :price="3$"/>
+					<app-product :title="Gizmo" :price="4$"/>
+				</div>
+			</div>
+
+			<div class="pk-row">
+				<div class="pk-column six">
+					<h3>Data Binding</h3>
+					<ul>
+						<li>
+							<p>
+								Page elements can be given a <a href="#">data context</a>
+								with the <code>:data</code> attribute. Nested elements
+								inherit the context and can refine it or replace it with
+								their own.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								If the context is an array, the element is
+								automatically cloned.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Logic attributes inside an element can access context data
+								via the <code>data</code> variable. Thanks to reactivity,
+								data changes are automatically reflected in the DOM.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="pk-column six">
+					<h3>Data Sources</h3>
+					<ul>
+						<li>
+							<p>
+								PageAmp adds a simple formal representation of dynamic
+								data to plain HTML with the <code>&lt;:datasource></code>
+								tag.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								A <a href="#">data source</a> can access existing data and
+								services as well as define a client- or server-side
+								service itself, e.g. for DB persistence.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								Access to third party services will be automatically
+								relayed through the server in order to securely overcome the
+								<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">
+									same-origin
+									<i class="fas fa-external-link-alt" style="font-size:12px"></i></a>
+								limitations.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--- ==================================================================== -->
+			<!---  -->
+			<!--- ==================================================================== -->
+
+			<div class="pk-row">
+				<div class="pk-column" style="padding-top:0">
+					<h2 style="margin-top:0"></h2>
+				</div>
+			</div>
+		</div>
+
+		<pk-footer>
+			
+		</pk-footer>
+	</body>
+</html>
