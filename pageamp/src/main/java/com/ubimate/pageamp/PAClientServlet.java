@@ -25,17 +25,18 @@ public class PAClientServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		PrintWriter wr = res.getWriter();
 		try (BufferedReader rd = new BufferedReader(new InputStreamReader(
 				this.getClass().getResourceAsStream(CLIENT_JS_PATH)))) {
-			res.setContentType("application/javascript");
+			res.setContentType("application/javascript; charset=UTF-8");
+			PrintWriter wr = res.getWriter();
 			char buff[] = new char[BUFFER_SIZE];
 			for (int n; (n = rd.read(buff)) >= 0;) {
 				wr.write(buff, 0, n);
 			}
 		} catch (Exception ex) {
 			//TODO: better error presentation
-			res.setContentType("text/text;charset=UTF-8");
+			res.setContentType("text/text; charset=UTF-8");
+			PrintWriter wr = res.getWriter();
 			ex.printStackTrace(wr);
 		}
 	}

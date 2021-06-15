@@ -29,7 +29,6 @@ public class PAPageServlet extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		PrintWriter wr = res.getWriter();
 		try {
 			String domain = req.getAttribute("domain").toString();
 			String path = req.getAttribute("path").toString();
@@ -44,15 +43,15 @@ public class PAPageServlet extends HttpServlet {
 			}
 			String contextPath = getServletContext().getContextPath();
 			Page page = Server.load(docroot, path, domain, true, contextPath);
-			res.setContentType("text/html;charset=UTF-8");
-			wr.print(page.doc.toString());
+			String html = page.doc.toString();
+			res.setContentType("text/html; charset=UTF-8");
+			PrintWriter wr = res.getWriter();
+			wr.print(html);
 		} catch (Exception ex) {
 			//TODO: better error presentation
-			res.setContentType("text/text;charset=UTF-8");
+			res.setContentType("text/text; charset=UTF-8");
+			PrintWriter wr = res.getWriter();
 			ex.printStackTrace(wr);
-		} finally {
-			wr.close();
-			
 		}
 	}
 
