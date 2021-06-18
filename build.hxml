@@ -1,3 +1,19 @@
+--js src/main/webapp/.pageamp/client/pageamp.js
+--class-path src
+--class-path ../pageamp/src
+--class-path ../feffects
+--main pageamp.Client
+--define client
+--define HTML_EXTENSIONS
+--define feffects
+--library hscript
+--define hscriptPos
+--macro patchTypes('../pageamp/src/pageamp/hscript/interpTypePatch')
+--debug
+--dce std
+
+--next
+
 # generates java source files in src/main/haxe/src
 # requires sister project ../pageamp
 --java src/main/haxe
