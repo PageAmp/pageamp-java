@@ -51,6 +51,10 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+
+					<!-- https://stackoverflow.com/questions/35063994/how-is-the-context-path-set-in-a-java-web-application -->
+					<warName>ROOT</warName>
+
                 </configuration>
             </plugin>
             <plugin>
