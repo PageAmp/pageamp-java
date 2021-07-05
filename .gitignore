@@ -1,6 +1,7 @@
 target/*
 src/main/haxe/*
-src/main/webapp/.pageamp/client/*
+src/main/webapp/.pageamp/client/pageamp.js
+src/main/webapp/.pageamp/client/pageamp.js.map
 **/.DS_Store
 
 #
