@@ -1,3 +1,4 @@
+--cmd "rm -rf src/main/webapp/.pageamp"
 --cmd "rm -rf src/main/haxe/src/*"
 --cmd "rm -rf src/main/haxe/hxjava_build.txt"
 --cmd "mvn clean:clean"
